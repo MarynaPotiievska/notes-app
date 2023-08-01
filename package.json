@@ -1,0 +1,25 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarynaPotiievska/notes-app.git"
+  },
+  "keywords": [],
+  "author": "Maryna Potiievska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarynaPotiievska/notes-app/issues"
+  },
+  "homepage": "https://github.com/MarynaPotiievska/notes-app#readme",
+  "dependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
