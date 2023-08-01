@@ -25,19 +25,19 @@ export const notesList = [
   },
   {
     name: "TypeScript",
-    created: new Date("07/30/2023"),
+    created: new Date("07/31/2023"),
     category: "Idea",
     content: "It will be good to learn TypeScript",
   },
   {
     name: "Questions for an interview",
-    created: new Date("07/31/2023"),
+    created: new Date("08/01/2023"),
     category: "Task",
     content: "Prepare to the interview",
   },
   {
     name: "Game Of Thrones",
-    created: new Date("07/31/2023"),
+    created: new Date("08/02/2023"),
     category: "Random Thought",
     content: "Are there some news about George R.R. Martin 6th book?",
   },
