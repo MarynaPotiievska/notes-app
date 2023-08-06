@@ -4,5 +4,4 @@ The application allows you to make notes, edit, delete, archive and unarchive th
 
 ![Stats table](https://github.com/MarynaPotiievska/notes-app/assets/101947859/12c3d455-2a73-4893-9a79-9b29a905eae5)
 
-
-![archive table](https://github.com/MarynaPotiievska/notes-app/assets/101947859/f389e2b7-7348-42c6-b369-321df6a3cc62)
+![archive table](https://github.com/MarynaPotiievska/notes-app/assets/101947859/969030aa-4e3a-4c5b-963a-5928cf1b33cc)
