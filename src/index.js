@@ -1,35 +1,40 @@
-import { notesList } from "./js/notesList";
-import { dateSearch, getDate, getCategoryIcon } from "./js/dataProcessing";
-import { actionIcons } from "./js/constants";
+import { fillNotesTable, fillStatsTable } from "./js/markupCreateFn";
+import {
+  handleAddClick,
+  handleArchiveAll,
+  handleClick,
+  handleDeleteAll,
+  handleFormSubmit,
+  handleShowArchive,
+  handleUnarchiveAll,
+  handleUnarchiveClick,
+} from "./js/btnLogic";
 
-const refs = {
+export const refs = {
   notesTable: document.querySelector("#notes"),
-  headline: document.querySelector("#headline"),
   createBtn: document.querySelector("#create-note"),
+  statsTable: document.querySelector("#statistic"),
+  archiveAllBtn: document.querySelector(".archive-all"),
+  deleteAllBtn: document.querySelector(".delete-all"),
+  form: document.querySelector("#form"),
+  category: document.querySelector(".category"),
+  nameInput: document.querySelector(".name"),
+  contentInput: document.querySelector(".content"),
+  submitBtn: document.querySelector("#submit-btn"),
+  showArchiveBtn: document.querySelector("#show-archive"),
+  archiveTable: document.querySelector("#archive"),
+  archivedNotesList: document.querySelector("#archived-notes"),
+  unarchiveAllBtn: document.querySelector(".unarchive-all"),
 };
 
-const headlineActions = `<th><button type="button">${actionIcons.archive}</button> <button type="button">${actionIcons.delete}</button></th>`;
-
-const fillNotesTable = function () {
-  return notesList.reduce((tableContent, note) => {
-    tableContent.push(
-      `<tr><td>${getCategoryIcon(note.category)}<span>${
-        note.name
-      }</span></td><td>${getDate(note.created)}</td><td>${
-        note.category
-      }</td><td>${note.content}</td><td>${
-        dateSearch(note.content) ?? ""
-      }</td><td><button type="button">${
-        actionIcons.edit
-      }</button><button type="button">${
-        actionIcons.archive
-      }</button><button type="button">${actionIcons.delete}</button></td></tr>`
-    );
-    return tableContent;
-  }, []);
-};
-
-refs.headline.insertAdjacentHTML("beforeend", headlineActions);
 refs.notesTable.insertAdjacentHTML("beforeend", fillNotesTable().join(""));
+refs.statsTable.insertAdjacentHTML("beforeend", fillStatsTable().join(""));
 
-refs.createBtn.addEventListener("click");
+refs.deleteAllBtn.addEventListener("click", handleDeleteAll);
+refs.archiveAllBtn.addEventListener("click", handleArchiveAll);
+refs.notesTable.addEventListener("click", handleClick);
+refs.createBtn.addEventListener("click", handleAddClick);
+refs.submitBtn.addEventListener("click", handleFormSubmit);
+refs.showArchiveBtn.addEventListener("click", handleShowArchive);
+refs.unarchiveAllBtn.addEventListener("click", handleUnarchiveAll);
+refs.archivedNotesList.addEventListener("click", handleUnarchiveClick);
