@@ -3,29 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notes App</title>
+    <link rel="icon" href="public/favicon.ico" />
+    <link rel="apple-touch-icon" href="public/android-chrome-192x192.png" />
+    <link rel="manifest" href="public/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Notebook</title>
   </head>
   <body>
     <main>
       <section>
-        <div>
-          <table>
+        <div class="container">
+          <table class="table notes">
             <thead>
-              <tr id="headline">
+              <tr class="headline">
                 <th>Name</th>
                 <th>Created</th>
                 <th>Category</th>
                 <th>Content</th>
                 <th>Dates</th>
+                <th class="head-btns-cell">
+                  <button class="archive-all btn">
+                    <svg width="20" height="20" class="head-icon">
+                      <use href="./src/assets/symbol-defs.svg#archive"></use>
+                    </svg>
+                  </button>
+                  <button class="delete-all btn">
+                    <svg width="20" height="20" class="head-icon">
+                      <use href="./src/assets/symbol-defs.svg#delete"></use>
+                    </svg>
+                  </button>
+                </th>
               </tr>
             </thead>
             <tbody id="notes"></tbody>
           </table>
-          <button type="button" id="create-note">Create Note</button>
+          <button type="button" id="create-note" class="btn">
+            Create Note
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <form id="form" class="visually-hidden">
+            <label class="label">
+              <span>Category:</span>
+              <select name="category" class="category input">
+                <option value="Task">Task</option>
+                <option value="Idea">Idea</option>
+                <option value="Random Thought">Random Thought</option>
+              </select>
+            </label>
+            <label class="label">
+              <span>Note's name:</span>
+              <input type="text" name="name" required class="name input" />
+            </label>
+            <label class="label">
+              <span>Content:</span>
+              <textarea
+                name="content"
+                required
+                rows="1"
+                cols="75"
+                class="content input"
+              ></textarea>
+            </label>
+            <button type="submit" id="submit-btn" class="btn">
+              <svg width="25" height="25" class="submit-icon">
+                <use href="./src/assets/symbol-defs.svg#submit"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr class="headline">
+                <th>Note Category</th>
+                <th>Active</th>
+                <th>
+                  <button type="button" id="show-archive" class="btn">
+                    Archived
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="statistic"></tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <table id="archive" class="visually-hidden table">
+            <thead>
+              <tr class="headline">
+                <th>Name</th>
+                <th>Created</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Dates</th>
+                <th class="btn-cell">
+                  <button class="unarchive-all btn">
+                    <svg width="20" height="20" class="head-icon">
+                      <use href="./src/assets/symbol-defs.svg#unarchive"></use>
+                    </svg>
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="archived-notes"></tbody>
+          </table>
         </div>
       </section>
     </main>
 
     <script type="module" src="public/index.js"></script>
+    <!-- <script type="module" src="public/btnLogic.js"></script> -->
   </body>
 </html>
